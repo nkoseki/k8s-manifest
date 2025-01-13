@@ -1,4 +1,3 @@
-echo "# k8s-basic" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
