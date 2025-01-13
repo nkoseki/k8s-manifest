@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sample-ingress-by-nginx
+  annotations:
+    #nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+     
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ingress.local
+    http:
+      paths:
+      - path: "/path1/"
+        pathType: Prefix
+        backend:
+          service:
+            name: sample-ingress-svc-1
+            port:
+              number: 8888
+
+          
