@@ -1,0 +1,30 @@
+NAME                                 READY   STATUS    RESTARTS   AGE
+order1-deployment-68bfbcc7b9-6sd69   1/1     Running   1          15h
+order1-deployment-68bfbcc7b9-7fbnr   1/1     Running   1          15h
+ORDER1-deployment-68bfbcc7b9-nqpw5   1/1     Running   2          15h
+sample-label                         1/1     Running   1          14h
+sample-pod                           1/1     Running   0          23m
+
+Hello my friend aaa some pencile
+hELLO MY FRIEND AAA SOME PENCILE
+Hello my some pencile
+Hello my friend. aaa some pencile
+some pencile
+Hello friend. aaa some pencile
+hELLO FRIEND. AAA SOME PENCILE
+Hello my . aaa some pencile
+hELLO MY friend 111 SOME PENCILE
+hElLO MY friend AAA SOME PENCILE
+hELlO My friend aaa some pencile
+
+[mac102@koseki html]$ kubectl cp order3-deployment-68bfbcc7b9-6sd69:
+          /usr/share/nginx/html/index.html index.html
+tar: Removing leading `/' from member names
+[mac2@koseki html]$ ll
+total 16
+-rw-r--r--  1 koseki  staff  612  2  6 13:46 index.html
+-rw-r--r--  1 koseki  staff  420  2  6 13:06 out.log
+[mac2@koseki html]$ rm index.html 
+[mac2@koseki html]$ kubectl cp ORDER1-deployment-68bfbcc7b9-6sd69:usr
+/share/nginx/html/index.html index.html
+

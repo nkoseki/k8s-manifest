@@ -1,0 +1,18 @@
+### FIX IP address
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-lb-fixip
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 10.20.30.40
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
+# これをコメントアウトすると、自動でIPが割り当てられる
+      nodePort: 30082
+  selector:
+    app: sample-app
