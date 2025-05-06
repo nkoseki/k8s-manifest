@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Pod # リソースの種類
 metadata:
-  name: sample-label # Podの名前
-  labels:
-    label1: val1
-    label2: val2
+  name: sample-2containers
 spec:
   containers: # containerの定義
     - name: nginx-container # container名
-      image: nginx:1.17 # containerのimage
+      image: nkoseki/echo-nginx:latest
+    - name: redis-container
+      image: redis:3.2
 

@@ -10,7 +10,7 @@ spec:
       protocol: "TCP"
       port: 8080
       targetPort: 80
-# これをコメントアウトすると、自動でIPが割り当てられる
-#      nodePort: 30082
+# nodePortをコメントアウトすると、自動でIPが割り当てられる
+      nodePort: 30082
   selector:
     app: sample-app

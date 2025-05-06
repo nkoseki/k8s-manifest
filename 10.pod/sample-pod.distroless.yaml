@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-distroless
+spec:
+  containers:
+    - name: my-work-container
+      # staticはopenssl,glibcも入っていない最軽量らしい
+      image: gcr.io/distroless/base-debian11:debug-nonroot
+# distrolessはdebug-nonrootでないとsleepが入っていない
+# また置き場所も違っている(docker run -it gcr.io/distroless/base:debug-nonrootでログインして確認)
+      command:
+        - /busybox/sleep
+        - infinity
+

@@ -5,6 +5,8 @@ metadata:
   name: sample-clusterip
 spec:
   type: ClusterIP
+  # 固定IPにする場合
+  clusterIP: 10.97.10.10
   ports:
     - name: "http-port"
       protocol: "TCP"

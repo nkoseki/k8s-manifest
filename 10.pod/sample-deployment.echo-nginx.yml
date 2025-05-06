@@ -4,6 +4,10 @@ kind: Deployment
 metadata:
   name: sample-deployment
 spec:
+# spec.strategy.typeのデフォルトは"RollingUpdate"
+# "Recreate"だと、既存のすべてのPodは新しいPodが作成される前に削除される
+  strategy: 
+    type: Recreate
   replicas: 3
   selector:
     matchLabels:
@@ -14,7 +18,7 @@ spec:
         app: sample-app
     spec:
       containers:
-        - name: nginx-container
-          image: nginx:1.17
+        - name: echo-nginx-container
+          image: nkoseki/echo-nginx
           ports:
             - containerPort: 80

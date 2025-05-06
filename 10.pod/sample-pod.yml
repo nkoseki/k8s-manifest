@@ -5,5 +5,5 @@ metadata:
 spec:
   containers: # containerの定義
     - name: my-nginx-container # container名
-      image: nginx:1.17 # containerのimage
+      image: nkoseki/echo-nginx:latest
 

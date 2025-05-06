@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-svc-1
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8888
+      targetPort: 80
+      nodePort: 30081
+  selector:
+    app: sample-app-1
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deploy-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sample-app-1
+  template:
+    metadata:
+      labels:
+        app: sample-app-1
+    spec:
+      containers:
+        - name: echo-nginx
+          image: nkoseki/echo-nginx:latest
+          ports:
+            - containerPort: 80
+
