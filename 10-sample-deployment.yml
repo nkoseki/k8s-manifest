@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-deployment-kose
+  name: sample-deployment
 spec:
   replicas: 3
   selector:
@@ -14,7 +14,7 @@ spec:
         app: sample-app
     spec:
       containers:
-        - name: hello-apache
-          image: nkoseki/hello-apache
+        - name: toolbox
+          image: nkoseki/toolbox
           ports:
             - containerPort: 80
