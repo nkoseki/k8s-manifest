@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: sample-pod
+  labels:
+    app: sample-pod
+spec:
+  containers: 
+    - name: my-container # container名
+      image: nkoseki/toolbox
+

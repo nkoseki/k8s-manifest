@@ -1,7 +1,8 @@
+---
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: sample-rs
+  name: sample-deployment
 spec:
   replicas: 3
   selector:
