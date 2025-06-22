@@ -1,0 +1,1 @@
+kubectl create deployment my-deploy --image=nkoseki/echo-nginx:latest --replicas=1

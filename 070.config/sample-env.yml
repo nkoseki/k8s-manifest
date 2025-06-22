@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-env
+spec:
+  containers: 
+    - name: my-container
+      image: nkoseki/echo-nginx
+      env:
+      - name: MAX_CONNECTION
+        value: "100"
+          # TimeZoneを指定することでUTCからJSTに変更が可能
+      - name: TZ
+        value: Asia/Tokyo
+
